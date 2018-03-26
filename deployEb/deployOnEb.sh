@@ -31,7 +31,7 @@ cd $DEPLOYMENT_SCRIPTS_DIR/deployEb
 ./pushToEcr.sh $VERSION
 
 ### Prepare AWS EB application version
-./buildEBVersion.sh $PROJECT_NAME "$DOCKER_REGISTRY_HOST/$PROJECT_NAME" $VERSION
+./buildEbVersion.sh $PROJECT_NAME "$DOCKER_REGISTRY_HOST/$PROJECT_NAME" $VERSION
 
 ### Upload AWS EB application version
 ./uploadEbVersion.sh $VERSION
