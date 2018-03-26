@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 . $DEPLOYMENT_CONF_DIR/settings.sh
-. $DEPLOYMENT_CONF_DIR/awsCredentials.sh
+test -x $DEPLOYMENT_CONF_DIR/awsCredentials.sh && . $DEPLOYMENT_CONF_DIR/awsCredentials.sh
 
 if [ `echo $ENVIRONMENTS | grep $ENV | wc -l` -eq 0 ]; then
   echo "Wrong env value: $ENV. Allowed values: $ENVIRONMENTS"
