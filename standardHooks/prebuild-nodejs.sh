@@ -18,5 +18,5 @@
 # DEPLOYMENT_CONF_DIR
 
 # Build
-docker run -v $PROJECT_DIR:/usr/src/app -w /usr/src/app -t node npm install
+docker run -v $PROJECT_DIR:/usr/src/app -w /usr/src/app -t node bash -c "npm install; chown -R ${UID}:${GROUPS} ."
 
