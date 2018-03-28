@@ -13,7 +13,7 @@ fi
 # evalHook <stage> <hook_settings>
 function evalHook {
     if [ -z "$2" -o "$2" = "custom" ]; then
-        echo $DEPLOYMENT_CONF_DIR/hooks/prebuild.sh
+        echo $DEPLOYMENT_CONF_DIR/hooks/$1.sh
     else
         echo $DEPLOYMENT_SCRIPTS_DIR/standardHooks/$1-$2.sh
     fi

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ $# -lt 2 ] ; then
-  echo "Usage: 01-prebuild.sh <version number> <env>"
+  echo "Usage: 10-prebuild.sh <version number> <env>"
   exit 1
 fi
 export VERSION_NUMBER=$1

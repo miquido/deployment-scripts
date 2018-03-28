@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ $# -lt 2 ] ; then
-  echo "Usage: 04-deploy.sh <version number> <env>"
+  echo "Usage: 50-deploy.sh <version number> <env>"
   exit 1
 fi
 export VERSION_NUMBER=$1
