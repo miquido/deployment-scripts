@@ -18,4 +18,6 @@
 # DEPLOYMENT_CONF_DIR
 
 # Prepare dependencies
-docker run -v $PROJECT_DIR:/usr/src/app -w /usr/src/app -t node bash -c "npm run build:$ENV; chown -R ${UID}:${GROUPS} ."
+BUILD_ENV_FILE=$PROJECT_DIR/build/build.env
+env > $BUILD_ENV_FILE
+docker run --env-file $BUILD_ENV_FILE -v $PROJECT_DIR:/usr/src/app -w /usr/src/app -t node bash -c "npm run build:$ENV; chown -R ${UID}:${GROUPS} ."
