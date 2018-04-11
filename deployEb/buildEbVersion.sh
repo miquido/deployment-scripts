@@ -26,7 +26,9 @@ rm -rf $AWS_EB_VERSION_BUILD_DIR 2> /dev/null
 mkdir -p $AWS_EB_VERSION_BUILD_DIR/package
 
 cat $DEPLOYMENT_CONF_DIR/awseb/Dockerrun.aws.json | sed "s~{{APPLICATION_IMAGE}}~$DOCKER_TAG~g" > $AWS_EB_VERSION_BUILD_DIR/package/Dockerrun.aws.json
-cp -r $DEPLOYMENT_CONF_DIR/awseb/.ebextensions $AWS_EB_VERSION_BUILD_DIR/package
+if [ -d $DEPLOYMENT_CONF_DIR/awseb/.ebextensions ]; then
+  cp -r $DEPLOYMENT_CONF_DIR/awseb/.ebextensions $AWS_EB_VERSION_BUILD_DIR/package
+fi
 
 cd $AWS_EB_VERSION_BUILD_DIR/package
 zip -r $AWS_EB_VERSION_BUILD_DIR/$PROJECT_NAME-$VERSION.zip .
