@@ -17,6 +17,6 @@
 # DEPLOYMENT_SCRIPTS_DIR
 # DEPLOYMENT_CONF_DIR
 
-# Prepare dependencies
+# Run lint and tests
 docker run -v $PROJECT_DIR:/usr/src/app -w /usr/src/app -t node npm run eslint
 docker run -v $PROJECT_DIR:/usr/src/app -w /usr/src/app -t node npm run test
